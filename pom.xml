@@ -56,7 +56,7 @@
         <version.arquillian.wildfly.managed>8.2.1.Final</version.arquillian.wildfly.managed>
         <version.wildfly>10.1.0.Final</version.wildfly>
         <version.junit>4.12</version.junit>
-        <version.jsonunit>1.12.1</version.jsonunit>
+        <version.jsonunit>1.31.1</version.jsonunit>
         <version.jackson>2.3.1</version.jackson>
         <version.tomee>7.0.1</version.tomee>
         <version.el>2.2</version.el>
@@ -604,14 +604,11 @@
                                     <shadedArtifactAttached>true</shadedArtifactAttached>
                                     <shadedClassifierName>hammock</shadedClassifierName>
                                     <transformers>
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                             <resource>META-INF/cxf/bus-extensions.txt</resource>
                                         </transformer>
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                             <mainClass>org.jboss.weld.environment.se.StartMain</mainClass>
                                         </transformer>
                                     </transformers>
