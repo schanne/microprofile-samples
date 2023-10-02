@@ -46,7 +46,7 @@
     <properties>
         <version.javaee>7.0</version.javaee>
         <version.resteasy>3.0.18.Final</version.resteasy>
-        <version.swagger>1.5.9</version.swagger>
+        <version.swagger>1.6.9</version.swagger>
         <skipLicenseCheck>false</skipLicenseCheck>
         <!--Swarm -->
         <version.wildfly-swarm>2016.12.0</version.wildfly-swarm>
@@ -604,14 +604,11 @@
                                     <shadedArtifactAttached>true</shadedArtifactAttached>
                                     <shadedClassifierName>hammock</shadedClassifierName>
                                     <transformers>
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                             <resource>META-INF/cxf/bus-extensions.txt</resource>
                                         </transformer>
-                                        <transformer
-                                            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                             <mainClass>org.jboss.weld.environment.se.StartMain</mainClass>
                                         </transformer>
                                     </transformers>
